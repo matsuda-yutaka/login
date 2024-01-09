@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class DBConnector {
 	private static String driverName ="com.mysql.jdbc.Driver";
-	private static String url = "jbdc:mysql://localhost/logindb_matsuda?enabledTLSProtocols=TLSv1.2";
+	private static String url = "jbdc:mysql://localhost/logindb_matsuda?enabledTLSProtocols=TLSv1.2&autoReconnect=true&useSSL=false";
 	
 	private static String user = "root";
 	private static String password = "root";
@@ -16,11 +16,10 @@ public class DBConnector {
 		try {
 			Class.forName(driverName);
 			con = (Connection) DriverManager.getConnection(url,user,password);
-		} catch (ClassNotFoundException e)
-			{ e.printStackTrace();
-	} catch (SQLException e) { e.printStackTrace();
-	}
-	
-	return con;
+		} catch (ClassNotFoundException e){
+			e.printStackTrace();
+		} catch (SQLException e) { e.printStackTrace();
+		}
+		return con;
 	}
 }

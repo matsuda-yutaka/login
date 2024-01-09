@@ -1,5 +1,7 @@
 package com.diworksdev.login.action;
-import java.sql.SQLExeception;
+
+import java.sql.SQLException;
+
 import com.diworksdev.login.dao.LoginDAO;
 import com.diworksdev.login.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;

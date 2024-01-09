@@ -22,7 +22,7 @@ public class LoginDTO {
 	}
 	
 	public String getPassword() {
-		return passsword;
+		return password;
 	}
 	public void setPassword(String password)
 	{

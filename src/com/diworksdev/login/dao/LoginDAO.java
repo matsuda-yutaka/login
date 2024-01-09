@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import com.diworksdev.login.dto.LoginDTO;
 import com.diworksdev.login.util.DBConnector;
 
@@ -26,12 +27,11 @@ public class LoginDAO {
 				dto.setName(rs.getString("user_name"));
 				dto.setPassword(rs.getString("password"));
 			}
-		} catch (SQLException e)
-			{ e.printStackTrace();
-	} finally {
-		
-		con.close();
-	}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			con.close();
+		}
 		
 	return dto;
 	
